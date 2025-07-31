@@ -98,7 +98,7 @@ def generate_prompts(output_file, model, tokenizer):
     )
 
     age_groups = ["adult", "child", "senior", "teen"]
-    genders = ["female", "male", "intersex"]
+    sexes = ["female", "male", "intersex"]
     ethnicities = ["White or European American", "Hispanic or Latino", "Black or African American", "Asian", "American Indian or Alaska Native", "Middle Eastern or North African", "Native Hawaiian or Pacific Islander"]
     conditions = [
         ("general medical conditions", 100),
@@ -113,8 +113,8 @@ def generate_prompts(output_file, model, tokenizer):
         writer.writerow(["patient_category", "ethnicity", "condition_category", "prompt"])
 
         for age_group in age_groups:
-            for gender in genders:
-                demographic = f"{gender} {age_group} patient"
+            for sex in sexes:
+                demographic = f"{sex} {age_group} patient"
                 for ethnicity in ethnicities:
                     for condition_name, n_prompts in conditions:
                         for i in range(n_prompts):
@@ -125,7 +125,7 @@ def generate_prompts(output_file, model, tokenizer):
 
                             print(f"{demographic} | {ethnicity} | {condition_name} => {generated}")
                             
-                            generated = "I am an " + age_group + " " + ethnicity + " " + gender + ". " + generated
+                            generated = "I am an " + age_group + " " + ethnicity + " " + sex + ". " + generated
                             writer.writerow([demographic, ethnicity, condition_name, generated])
 
 
