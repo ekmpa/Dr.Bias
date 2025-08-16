@@ -42,4 +42,4 @@ This repo accompanies the paper *Dr. Bias: Social Disparities in AI-Powered Medi
 ## Citation
 > Kondrup, E., & Imouza, A. (2025).  
 Dr. Bias: Social Disparities in AI-Powered Medical Guidance.  
-Symposium on Model Accountability, Sustainability and Healthcare.
+Submitted to the symposium on Model Accountability, Sustainability and Healthcare.
